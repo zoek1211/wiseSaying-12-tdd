@@ -8,7 +8,9 @@ public class Main {
     }
 
     private static void lab1() {
-        Scanner scanner = new Scanner(System.in);
+        String input = "등록";
+
+        Scanner scanner = new Scanner("등록");
 
         String cmd = scanner.nextLine();
 
