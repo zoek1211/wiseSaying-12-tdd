@@ -10,9 +10,10 @@ public class Main {
     private static void lab1() {
         String input = "등록";
 
-        Scanner scanner = new Scanner("등록");
+        Scanner scanner = new Scanner(input);
 
         String cmd = scanner.nextLine();
+        String content = scanner.nextLine();
 
         System.out.println(cmd);
     }
