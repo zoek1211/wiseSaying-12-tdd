@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 //        lab1();
-        lab2();
+//        lab2();
     }
 
     private static void lab1() {
