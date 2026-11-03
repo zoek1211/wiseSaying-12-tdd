@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 //        lab1();
 //        lab2();
-        AppContext.scanner = new Scanner(System.in);
+        AppContext.renew();
         new App().run();
     }
 

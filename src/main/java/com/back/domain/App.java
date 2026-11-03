@@ -15,8 +15,8 @@ public class App {
     public void run() {
         System.out.println("== 명언 앱 ==");
 
-        WiseSayingController wiseSayingController = new WiseSayingController(scanner);
-        SystemController systemController = new SystemController();
+        WiseSayingController wiseSayingController = AppContext.wiseSayingController;
+        SystemController systemController = AppContext.systemController;
 
         while (true) {
             System.out.println("명령) ");
