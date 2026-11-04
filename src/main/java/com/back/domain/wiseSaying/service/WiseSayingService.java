@@ -1,6 +1,6 @@
 package com.back.domain.wiseSaying.service;
 
-import com.back.domain.AppContext;
+import com.back.AppContext;
 import com.back.domain.wiseSaying.entity.WiseSaying;
 import com.back.domain.wiseSaying.repository.WiseSayingRepository;
 
