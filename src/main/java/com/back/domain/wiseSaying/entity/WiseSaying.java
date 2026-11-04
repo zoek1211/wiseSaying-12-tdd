@@ -1,5 +1,12 @@
 package com.back.domain.wiseSaying.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 public class WiseSaying {
     private int id;
     private String content;
