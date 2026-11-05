@@ -18,6 +18,11 @@ public class Util {
             return Files.exists(getPath(filePath));
         }
 
+        public static boolean notExists(String filePath) {
+            return !exists(filePath);
+        }
+
+        // 파일 없으면 만듬
         public static void set(String filePath, String content) {
             Path path = getPath(filePath);
             try {
@@ -67,6 +72,14 @@ public class Util {
                 return true;
             } catch (IOException e) {
                 return false;
+            }
+        }
+
+        public static String get(String filePath, String defaultValue) {
+            try {
+                return Files.readString(getPath(filePath));
+            } catch (IOException e) {
+                return defaultValue;
             }
         }
     }
