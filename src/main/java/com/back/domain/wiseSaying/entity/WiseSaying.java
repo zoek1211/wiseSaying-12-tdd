@@ -1,16 +1,17 @@
 package com.back.domain.wiseSaying.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @Getter
 @Setter
 @ToString
+@EqualsAndHashCode
 public class WiseSaying {
     private int id;
     private String content;
@@ -25,18 +26,6 @@ public class WiseSaying {
         this.id = (int) map.get("id");
         this.content = (String) map.get("content");
         this.author = (String) map.get("author");
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        WiseSaying that = (WiseSaying) o;
-        return id == that.id && Objects.equals(content, that.content) && Objects.equals(author, that.author);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, content, author);
     }
 
     public boolean isNew() {
