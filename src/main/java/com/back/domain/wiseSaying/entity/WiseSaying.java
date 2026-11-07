@@ -4,6 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Objects;
+
 @Getter
 @Setter
 @ToString
@@ -17,37 +21,35 @@ public class WiseSaying {
         this.author = author;
     }
 
-    public WiseSaying(int id, String content, String author) {
-        this.id = id;
-        this.content = content;
-        this.author = author;
+    public WiseSaying(Map<String, Object> map) {
+        this.id = (int) map.get("id");
+        this.content = (String) map.get("content");
+        this.author = (String) map.get("author");
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        WiseSaying that = (WiseSaying) o;
+        return id == that.id && Objects.equals(content, that.content) && Objects.equals(author, that.author);
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, content, author);
     }
 
     public boolean isNew() {
         return id == 0;
+    }
+
+    public Map<String, Object> toMap() {
+        Map<String, Object> map = new LinkedHashMap<>();
+
+        map.put("id", id);
+        map.put("content", content);
+        map.put("author", author);
+
+        return map;
     }
 }
